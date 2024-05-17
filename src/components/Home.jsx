@@ -187,11 +187,13 @@ export default function Home() {
                           EDIT
                         </button>
                       </Link>
-                      <button
-                        onClick={() => openDeleteModal(item)}
-                        className="bg-gray-600 px-[10px] py-[5px] group-hover:bg-gray-300 group-hover:text-black font-medium rounded-lg text-white">
-                        DELETE
-                      </button>
+                      <Link to="/">
+                        <button
+                          onClick={() => openDeleteModal(item)}
+                          className="bg-gray-600 px-[10px] py-[5px] group-hover:bg-gray-300 group-hover:text-black font-medium rounded-lg text-white">
+                          DELETE
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </Tilt>
