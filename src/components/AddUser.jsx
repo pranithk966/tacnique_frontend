@@ -1,8 +1,10 @@
 import axios from 'axios'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 
 export default function AddUser() {
+  const nav = useNavigate()
   const {
     register,
     handleSubmit,
@@ -27,6 +29,7 @@ export default function AddUser() {
       .then((res) => {
         console.log('added user')
         console.log(res)
+        nav('/')
       })
       .catch((err) => console.log(err))
   }
@@ -42,7 +45,7 @@ export default function AddUser() {
           </label>
           <input
             id="fname"
-            className="border px-[10px] py-[5px] my-[5px] w-full font-mono focus:outline-gray-300"
+            className="border px-[10px] py-[5px] my-[5px] sm:w-full font-mono focus:outline-gray-300"
             type="text"
             placeholder="Enter First Name"
             {...register('firstName', { required: true })}
@@ -60,7 +63,7 @@ export default function AddUser() {
           </label>
           <input
             id="lname"
-            className="border px-[10px] py-[5px] my-[5px] w-full font-mono focus:outline-gray-300"
+            className="border px-[10px] py-[5px] my-[5px] sm:w-full font-mono focus:outline-gray-300"
             type="text"
             placeholder="Enter Last Name"
             {...register('lastName', { required: true })}
@@ -79,7 +82,7 @@ export default function AddUser() {
 
           <input
             id="email"
-            className="border px-[10px] py-[5px] my-[5px] w-full font-mono focus:outline-gray-300"
+            className="border px-[10px] py-[5px] my-[5px] sm:w-full font-mono focus:outline-gray-300"
             placeholder="Enter Email Address"
             // type="email"
             {...register('email', {
@@ -105,7 +108,7 @@ export default function AddUser() {
           </label>
           <input
             id="dpt"
-            className="border px-[10px] py-[5px] my-[5px] w-full font-mono focus:outline-gray-300"
+            className="border px-[10px] py-[5px] my-[5px] sm:w-full font-mono focus:outline-gray-300"
             type="text"
             placeholder="Enter Department"
             {...register('department', { required: true })}
